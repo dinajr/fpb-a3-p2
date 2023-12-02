@@ -1,0 +1,28 @@
+ <?php
+
+include('conexao.php');
+include('funcoes.php');
+
+$login = isset($_POST['login']) ? $_POST['login'] : '';
+$senha = isset($_POST['senha']) ? $_POST['senha'] : '';
+
+$senhacriptografada = criptografar($senha);
+
+$select = "SELECT login, senha, cpf FROM login 
+			WHERE login = '$login' AND senha = '$senhacriptografada'";
+$query = mysqli_query($conexao, $select);
+$dados = mysqli_fetch_row($query);
+
+if (isset($dados[0]) == $login && isset($dados[1]) == $senhacriptografada) {
+	session_start();
+	$_SESSION['login'] = $dados[0];	
+	$_SESSION['cpf'] = $dados[2];
+	$_SESSION['logado'] = true;
+	header('Location: index.php');
+} else {
+	echo '<script>alert("Usuário ou senha incorretos");
+			window.location="index.php";
+			</script>';
+}
+
+?>

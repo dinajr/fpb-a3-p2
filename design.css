@@ -1,0 +1,57 @@
+/* Decorar a barra do topo do site */
+* {
+  box-sizing: border-box;
+}
+
+.barraprincipal {
+    background-color: #ad114f;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: sticky
+}
+  
+
+  
+  .botao {
+    display: block;
+    background-color:  #ed2173;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    float: left;
+  }
+  .login_botao {
+    float: right;
+  }
+  
+  /*  decoração ao colocar o cursor no link */
+  .botao:hover {
+    background-color: #ffd5ea;
+  }
+  .destaque {
+    background-color: #a600ff;
+  }
+  .paginaprodutos { 
+    background-color: #e8e8e8;
+  } 
+  .carta { 
+  background-color: #e8e8e8;
+  border: 1px solid black;
+  margin: 1rem;
+  padding: 2rem 2rem;
+  text-align: center;
+  box-sizing: border-box;
+  
+  } 
+  .caixa { 
+    background-color: #b5b5b5;
+    display: inline-block;
+    border: 1px solid red;
+    padding: 1rem 1rem;
+    vertical-align: middle;
+    
+    
+  } 
